@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "93f4f06e-68fb-4b54-ac08-610c991840fb",
+		"name": "OnTask API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Workflow List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "c73353dc-bab3-4231-a130-2a1f6edae0ac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://app.ontask.io/api/v2/workflowTemplates",
+					"protocol": "https",
+					"host": [
+						"app",
+						"ontask",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2",
+						"workflowTemplates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Start Form",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "c73353dc-bab3-4231-a130-2a1f6edae0ac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://app.ontask.io/api/v2/workflowTemplates/{{templateId}}/startForm",
+					"protocol": "https",
+					"host": [
+						"app",
+						"ontask",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2",
+						"workflowTemplates",
+						"{{templateId}}",
+						"startForm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Workflow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "c73353dc-bab3-4231-a130-2a1f6edae0ac",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cat_name\": \"Sammy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://app.ontask.io/api/v2/workflowTemplates/{{templateId}}",
+					"protocol": "https",
+					"host": [
+						"app",
+						"ontask",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2",
+						"workflowTemplates",
+						"{{templateId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Properties",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "c73353dc-bab3-4231-a130-2a1f6edae0ac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://app.ontask.io/api/v2/instances/:instanceId/properties",
+					"protocol": "https",
+					"host": [
+						"app",
+						"ontask",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2",
+						"instances",
+						":instanceId",
+						"properties"
+					],
+					"variable": [
+						{
+							"key": "instanceId",
+							"value": "dd63c290-0032-11ec-9754-0242ac120002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Document List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "c73353dc-bab3-4231-a130-2a1f6edae0ac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://app.ontask.io/api/v2/instances/:instanceId/documents",
+					"protocol": "https",
+					"host": [
+						"app",
+						"ontask",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2",
+						"instances",
+						":instanceId",
+						"documents"
+					],
+					"variable": [
+						{
+							"key": "instanceId",
+							"value": "dd63c290-0032-11ec-9754-0242ac120002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Document",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "c73353dc-bab3-4231-a130-2a1f6edae0ac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://app.ontask.io/api/v2/documents/:documentId",
+					"protocol": "https",
+					"host": [
+						"app",
+						"ontask",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2",
+						"documents",
+						":documentId"
+					],
+					"variable": [
+						{
+							"key": "documentId",
+							"value": "d3038eec-2015-4ee0-84f9-3d47a8a5f50b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Document",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "c73353dc-bab3-4231-a130-2a1f6edae0ac",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "'application/pdf'",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/aluu/Downloads/example.pdf"
+					}
+				},
+				"url": {
+					"raw": "https://app.ontask.io/api/v2/documents",
+					"protocol": "https",
+					"host": [
+						"app",
+						"ontask",
+						"io"
+					],
+					"path": [
+						"api",
+						"v2",
+						"documents"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://app.ontask.io"
+		},
+		{
+			"key": "templateId",
+			"value": "88ebbae3-adb1-4aa6-bcec-dbbf3929aa85"
+		}
+	]
+}
